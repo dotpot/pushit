@@ -12,6 +12,14 @@ log = logging.getLogger(__name__)
 IOSResponseListenerType = Callable[[dict], dict]
 
 
+class ConfigurationMissingError(BaseException):
+    pass
+
+
+class UnrecognisedPushIdError(BaseException):
+    pass
+
+
 class IOSConfig:
     cert_file_path = None
     key_file_path = None
@@ -165,14 +173,14 @@ class Notification:
         global _services
 
         if not _services:
-            raise ValueError("missing configuration, use `configure` method first.")
+            raise ConfigurationMissingError("missing configuration, use `configure` method first.")
 
         if push_id.kind == PushIdKind.IOs:
             return self._send_ios(push_id=push_id)
         elif push_id == PushIdKind.Android:
             return self._send_android(push_id=push_id)
 
-        raise ValueError("unrecognized push_id")
+        raise UnrecognisedPushIdError("unrecognized push_id")
 
 
 __all__ = [
