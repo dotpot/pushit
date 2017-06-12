@@ -1,7 +1,7 @@
-from typing import Callable
 import enum
 import logging
 import random
+from typing import Callable
 
 from .android import GCM2
 from .ios import APNs, Payload
@@ -177,7 +177,7 @@ class Notification:
 
         if push_id.kind == PushIdKind.IOs:
             return self._send_ios(push_id=push_id)
-        elif push_id == PushIdKind.Android:
+        elif push_id.kind == PushIdKind.Android:
             return self._send_android(push_id=push_id)
 
         raise UnrecognisedPushIdError("unrecognized push_id")
@@ -191,6 +191,5 @@ __all__ = [
     'AndroidConfig',
     'IOSConfig',
 
-    'AndroidPushId',
-    'IOSPushId',
+    'PushId',
 ]

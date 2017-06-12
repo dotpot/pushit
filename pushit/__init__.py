@@ -1,4 +1,11 @@
-from .pushit import IOSConfig, AndroidConfig, PushId, PushIdKind, configure, Notification
+from .pushit import (
+    AndroidConfig,
+    configure,
+    IOSConfig,
+    Notification,
+    PushId,
+    PushIdKind
+)
 
 __all__ = [
     "IOSConfig",
