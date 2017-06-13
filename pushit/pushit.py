@@ -154,20 +154,7 @@ class Notification:
             reg_ids=[push_id.push_id],
             notification_data=self.notification_data)
 
-        # ToDo: callback method
-
         return response
-        # # Handling errors
-        # if 'errors' in response:
-        #     log.error('found errors in response')
-        #     for error, reg_ids in response['errors'].items():
-        #         log.error('error: %s, reg_ids: %s', error, reg_ids)
-        #         pass
-        # if 'canonical' in response:
-        #     log.warning('found canonical in response')
-        #     for reg_id, canonical_id in response['canonical'].items():
-        #         log.warning('reg_id: %s, canonical_id: %s', reg_id, canonical_id)
-        #         pass
 
     def send(self, push_id: PushId):
         global _services
