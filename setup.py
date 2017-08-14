@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='pushit',
     version='0.1',
-    packages=['pushit'],
+    packages=['pushit', 'pushit/android', 'pushit/ios'],
     install_requires=['pytest', 'pytest-mock', 'ujson'],
     description='Push notifications sender for ios and android',
     keywords='push notifications apple ios android google cloud messaging',
