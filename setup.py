@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pushit',
-    version='0.2',
+    version='0.3',
     packages=['pushit', 'pushit/android', 'pushit/ios'],
     install_requires=['pytest', 'pytest-mock', 'ujson'],
     description='Push notifications sender for ios and android',

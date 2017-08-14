@@ -18,7 +18,7 @@ def ios_apns_fixture():
 @pytest.fixture
 def gcm_fixture():
     class GCMMock:
-        def json_request(self, registration_ids, notification_data):
+        def json_request(self, registration_ids, data):
             return {}
     return GCMMock()
 
