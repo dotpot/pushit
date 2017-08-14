@@ -152,7 +152,7 @@ class Notification:
 
         response = _services.android.json_request(
             registration_ids=[push_id.push_id],
-            notification_data=self.notification_data)
+            data=self.notification_data)
 
         return response
 
