@@ -151,7 +151,7 @@ class Notification:
         global _services
 
         response = _services.android.json_request(
-            reg_ids=[push_id.push_id],
+            registration_ids=[push_id.push_id],
             notification_data=self.notification_data)
 
         return response
